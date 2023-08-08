@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="../../src/language/sdml.js"></script>
+    <script type="text/javascript">
+     document.addEventListener('DOMContentLoaded', (event) => {
+       hljs.registerLanguage("sdml", sdml);
+       hljs.highlightAll();
+     });
+    </script>
+  </head>
+
+  <body>
+    <h1>SDML Example</h1>
+
+    <pre><code class="language-sdml">
+module rentals base <https://example.org/v/rentals> is
+
+  import [ dc skos xsd ]
+
+  ;; This is actually a US VIN
+  import cids:VehicleIdentificationNumber
+
+  @dc:version = 2
+
+  datatype UniqueId <- string is
+    @xsd:pattern = "[A-Za-z0-9_-]{22}"
+  end
+
+  union RentalClass of
+    Compact
+    UtilityVehicle
+    Luxury
+  end
+
+  enum CustomerLevel of
+    Basic = 1
+    Silver = 2
+    Gold = 3
+  end
+
+  entity Vehicle is
+    @skos:prefLabel = "Vehicle"@en
+
+    identity vin -> VehicleIdentificationNumber
+
+    information -> VehicleInformation
+    ref rentalClass -> {1} RentalClass
+  end
+
+  structure VehicleInformation is
+    make -> string
+    model -> string
+    year -> integer is
+      @xsd:minValue = 2000
+      @xsd:maxValue = 3000
+    end
+  end
+
+  entity Location
+
+  entity Customer is
+    identity id -> UniqueId
+  end
+
+  entity Booking is
+    identity bookingCode -> unknown
+
+    ref customer -> {1} Customer
+
+    group
+      @skos:prefLabel = "Rental Period"@en
+      pickup_date -> xsd:date
+      ref pickup_location -> Location
+      dropoff_date -> xsd:date
+      ref dropoff_location -> Location
+    end
+
+    group
+      @skos:prefLabel = "Requested"@en
+      ref bookingClass -> {1} RentalClass
+      ref vehicle -> {0..1} Vehicle
+    end
+  end
+
+  event VehicleAssigned source Booking is
+    vehicle -> VehicleIdentificationNumber
+  end
+
+end
+    </code></pre>
+  </body>
+</html>
