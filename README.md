@@ -1,5 +1,20 @@
 # SDML language grammar for highlight.js
 
+```
+        ___          _____          ___ 
+       /  /\        /  /::\        /__/\ 
+      /  /:/_      /  /:/\:\      |  |::\ 
+     /  /:/ /\    /  /:/  \:\     |  |:|:\    ___     ___ 
+    /  /:/ /::\  /__/:/ \__\:|  __|__|:|\:\  /__/\   /  /\ 
+   /__/:/ /:/\:\ \  \:\ /  /:/ /__/::::| \:\ \  \:\ /  /:/ 
+   \  \:\/:/~/:/  \  \:\  /:/  \  \:\~~\__\/  \  \:\  /:/ 
+    \  \::/ /:/    \  \:\/:/    \  \:\         \  \:\/:/ 
+     \__\/ /:/      \  \::/      \  \:\         \  \::/ 
+       /__/:/        \__\/        \  \:\         \__\/ 
+       \__\/          Domain       \__\/          Language
+        Simple                      Modeling
+```
+
 ## Usage
 
 Simply include the Highlight.js library in your webpage or Node app, then load this module.
