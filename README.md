@@ -1,19 +1,6 @@
-# SDML language grammar for highlight.js
+# SDML language highlighter for highlight.js
 
-```
-        ___          _____          ___ 
-       /  /\        /  /::\        /__/\ 
-      /  /:/_      /  /:/\:\      |  |::\ 
-     /  /:/ /\    /  /:/  \:\     |  |:|:\    ___     ___ 
-    /  /:/ /::\  /__/:/ \__\:|  __|__|:|\:\  /__/\   /  /\ 
-   /__/:/ /:/\:\ \  \:\ /  /:/ /__/::::| \:\ \  \:\ /  /:/ 
-   \  \:\/:/~/:/  \  \:\  /:/  \  \:\~~\__\/  \  \:\  /:/ 
-    \  \::/ /:/    \  \:\/:/    \  \:\         \  \:\/:/ 
-     \__\/ /:/      \  \::/      \  \:\         \  \::/ 
-       /__/:/        \__\/        \  \:\         \__\/ 
-       \__\/          Domain       \__\/          Language
-        Simple                      Modeling
-```
+![SDML Logo Text](https://raw.githubusercontent.com/sdm-lang/.github/main/profile/horizontal-text.svg)
 
 ## Usage
 
@@ -48,7 +35,11 @@ hljs.initHighlightingOnLoad();
 
 ## License
 
-This package is released under the MIT License. See LICENSE file for details.
+This package is released under the Apache License, Version 2.0. See LICENSE file for details.
+
+## Changes
+
+TBD
 
 ## Development
 
